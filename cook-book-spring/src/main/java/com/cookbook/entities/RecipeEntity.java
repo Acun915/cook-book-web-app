@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 public class RecipeEntity {
@@ -16,5 +15,5 @@ public class RecipeEntity {
     private String title;
     private String ingredients;
     private String content;
-    private List<Comment> comments;
+    private List<CommentEntity> commentEntities;
 }
