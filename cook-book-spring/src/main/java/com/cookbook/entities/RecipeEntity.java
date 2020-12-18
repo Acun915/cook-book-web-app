@@ -13,6 +13,6 @@ public class RecipeEntity {
     private String ingredients;
     private String content;
     @OneToMany
-    @JoinColumn(name = "comment_id")
+    @JoinColumn(name = "recipe_id")
     private List<CommentEntity> commentEntities;
 }
