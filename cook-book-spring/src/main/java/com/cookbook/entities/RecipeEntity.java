@@ -1,9 +1,6 @@
 package com.cookbook.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -15,5 +12,7 @@ public class RecipeEntity {
     private String title;
     private String ingredients;
     private String content;
+    @OneToMany
+    @JoinColumn(name = "comment_id")
     private List<CommentEntity> commentEntities;
 }
