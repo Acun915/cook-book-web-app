@@ -1,6 +1,8 @@
 package com.cookbook.services;
 
+import com.cookbook.DTOs.CommentDTO;
 import com.cookbook.DTOs.RecipeDTO;
+import com.cookbook.entities.CommentEntity;
 import com.cookbook.entities.RecipeEntity;
 import com.cookbook.mappers.RecipeMapper;
 import com.cookbook.repositories.RecipeRepository;
@@ -40,6 +42,16 @@ public class RecipeService {
         recipeDTO.setId(recipeEntity.getId());
 
         return recipeDTO;
+    }
+
+    public CommentDTO addComment(Long recipeId, CommentDTO commentDTO) {
+        RecipeEntity recipeEntity = recipeRepository.findById(recipeId).get();
+
+        recipeEntity.getComments().add(new CommentEntity(commentDTO.getContent(), recipeEntity));
+
+        recipeRepository.save(recipeEntity);
+
+        return commentDTO;
     }
 
 
