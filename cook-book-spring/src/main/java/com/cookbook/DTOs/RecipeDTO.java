@@ -8,8 +8,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class RecipeDTO {
+    private Long id;
     private String title;
     private String ingredients;
     private String content;
-    private List<Long> commentIds;
+    private List<String> comments;
 }

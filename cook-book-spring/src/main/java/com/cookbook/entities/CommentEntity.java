@@ -14,7 +14,12 @@ public class CommentEntity {
     private Long id;
     private String content;
 
-    public CommentEntity(String content) {
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
+    private RecipeEntity recipe;
+
+    public CommentEntity(String content, RecipeEntity recipeEntity) {
         this.content = content;
+        this.recipe = recipeEntity;
     }
 }

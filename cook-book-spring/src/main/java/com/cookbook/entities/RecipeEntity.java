@@ -18,16 +18,9 @@ public class RecipeEntity {
     private String title;
     private String ingredients;
     private String content;
-    @OneToMany
-    @JoinColumn(name = "recipe_id")
-    private List<CommentEntity> comments;
 
-    public RecipeEntity(String title, String ingredients, String content, List<CommentEntity> comments){
-        this.title=title;
-        this.ingredients=ingredients;
-        this.content=content;
-        this.comments=comments;
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private List<CommentEntity> comments;
 
     public RecipeEntity(String title, String ingredients, String content){
         this.title=title;

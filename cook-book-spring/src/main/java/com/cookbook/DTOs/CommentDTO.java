@@ -8,4 +8,5 @@ import lombok.NoArgsConstructor;
 public class CommentDTO {
     private Long id;
     private String content;
+    private Long recipeId;
 }
