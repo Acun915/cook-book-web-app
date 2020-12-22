@@ -14,6 +14,7 @@ public class RecipeController {
 
     private final RecipeService recipeService;
 
+    @CrossOrigin
     @GetMapping("/rest/recipes")
     @ResponseBody
     public List<RecipeDTO> getAllRecipes() {
