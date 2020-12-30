@@ -18,8 +18,18 @@ public class CommentEntity {
     @JoinColumn(name = "recipe_id")
     private RecipeEntity recipe;
 
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private UserEntity author;
+
     public CommentEntity(String content, RecipeEntity recipeEntity) {
         this.content = content;
         this.recipe = recipeEntity;
+    }
+
+    public CommentEntity(String content, RecipeEntity recipeEntity, UserEntity author) {
+        this.content = content;
+        this.recipe = recipeEntity;
+        this.author = author;
     }
 }

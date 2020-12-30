@@ -17,9 +17,8 @@ public class RecipeMapper {
         dto.setIngredients(entity.getIngredients());
         dto.setContent(entity.getContent());
         dto.setComments(entity.getComments().stream()
-                            .map(commentEntity -> commentEntity.getContent())
+                            .map(CommentMapper::toSimpleDTO)
                             .collect(Collectors.toList()));
-
         return dto;
     }
 

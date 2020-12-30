@@ -9,4 +9,5 @@ public class CommentDTO {
     private Long id;
     private String content;
     private Long recipeId;
+    private Long authorUserId;
 }

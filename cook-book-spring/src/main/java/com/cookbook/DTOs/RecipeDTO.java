@@ -12,5 +12,5 @@ public class RecipeDTO {
     private String title;
     private String ingredients;
     private String content;
-    private List<String> comments;
+    private List<SimpleCommentDTO> comments;
 }
